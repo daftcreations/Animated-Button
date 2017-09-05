@@ -1,0 +1,72 @@
+<html>
+    <head>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-color: #ECEFF1;
+        }    
+        #main{
+            height: 50px;
+            width: 150px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-family: fantasy;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            overflow: hidden;
+        }
+        #main::before{
+            content: 'LIKE IT!';
+            height: 50px;
+            width: 150px;
+            position: absolute;
+            top:0;
+            left: 0;
+            transition: all .3s;
+        }
+        #main::after{
+            content: '';
+            height: 50px;
+            width: 150px;
+            position: absolute;
+            box-shadow: inset 0px 0px 0px 2px black;
+            top:calc(100% - 2px);
+            left: 0;
+            transition: all .3s ease-in-out;
+        }
+        #icon{
+            height: 52px;
+            width: 50px;
+            font-size: 35px;
+            background-color:#ECEFF1;
+            position: absolute;
+            top:calc(100% + 2px);
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 1;
+            transition: all .3s ease-in-out;
+        }
+        #main:hover{
+            cursor: pointer;
+        }
+        #main:hover::before{
+            transform: translateY(-50px);
+        }
+        #main:hover::after{
+            top:0%;
+        }
+        #main:hover #icon{
+            transform: translate(-50%,calc(-100% + 2px));
+        }
+    </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="icon">&#x2661;</div>
+        </div>
+    </body>
+</html>
